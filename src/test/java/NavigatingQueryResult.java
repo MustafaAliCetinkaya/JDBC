@@ -41,5 +41,6 @@ public class NavigatingQueryResult {
         } catch (SQLException e) {
             System.out.println("UNEXPECTED ERROR HAS OCCURRED! "+ e.getMessage());
         }
+
     }
 }
