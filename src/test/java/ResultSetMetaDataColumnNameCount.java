@@ -25,5 +25,12 @@ public class ResultSetMetaDataColumnNameCount {
         }
 
 
+        int count = 1;
+        while (resultSet.next()) {
+            System.out.println(count+" - " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+            count++;
+        }
+
+
     }
 }
