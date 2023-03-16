@@ -14,10 +14,15 @@ public class ResultSetMetaDataColumnNameCount {
         ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
         //Get total number of columns
-        System.out.println("Total number of columns: "+resultSetMetaData.getColumnCount());
+        System.out.println("Total number of columns: " + resultSetMetaData.getColumnCount());
 
         //Get column titles
-        System.out.println("Name of the column: "+resultSetMetaData.getColumnName(1));
+        System.out.println("Name of the column: " + resultSetMetaData.getColumnName(1));
+
+
+        for (int i = 1; i < 10; i++) {
+            System.out.println(i + ". column name: " + resultSetMetaData.getColumnName(i));
+        }
 
 
     }
