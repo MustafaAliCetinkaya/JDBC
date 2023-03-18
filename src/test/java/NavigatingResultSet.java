@@ -42,5 +42,9 @@ public class NavigatingResultSet {
             System.out.println(resultSet.getString(2)+" | "+resultSet.getString(3));
 
         }
+
+        //If you want to learn how many rows are there in the table:
+        resultSet.last();
+        System.out.println("Last row' number: "+resultSet.getRow());
     }
 }
