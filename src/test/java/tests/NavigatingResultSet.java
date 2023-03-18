@@ -1,3 +1,5 @@
+package tests;
+
 import java.sql.*;
 
 public class NavigatingResultSet {
