@@ -21,11 +21,15 @@ public class ResultSetMetaDataColumnInfo {
         }
 
         System.out.println("--------------All Employees--------------");
+        for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
+            System.out.print(resultSetMetaData.getColumnName(i)+"\t");
+        }
+        System.out.println();
 
         while (resultSet.next()){
             System.out.println("Current row is :"+resultSet.getRow());
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
-                System.out.print(resultSet.getString(i)+" - ");
+                System.out.print(resultSet.getString(i)+"\t");
             }
             System.out.println();
         }
