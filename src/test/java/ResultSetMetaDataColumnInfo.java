@@ -34,5 +34,9 @@ public class ResultSetMetaDataColumnInfo {
             System.out.println();
         }
 
+        connection.close();
+        resultSet.close();
+        statement.close();
+
     }
 }
