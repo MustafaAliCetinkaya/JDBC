@@ -30,7 +30,6 @@ public class ResultSetMetaDataColumnNameCount {
             System.out.println(i + ". column name: " + resultSetMetaData.getColumnName(i));
         }
 
-
         System.out.println("--------------All Employees--------------");
 
         int count = 1;
