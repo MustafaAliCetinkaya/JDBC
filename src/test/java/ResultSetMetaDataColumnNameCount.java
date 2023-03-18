@@ -19,18 +19,25 @@ public class ResultSetMetaDataColumnNameCount {
         //Get column titles
         System.out.println("Name of the column: " + resultSetMetaData.getColumnName(1));
 
+        //Not dynamic, we assign the last column index
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i + ". column name: " + resultSetMetaData.getColumnName(i));
+        }
 
-        for (int i = 1; i < 10; i++) {
+        //Dynamic, the last column index is assigned automatically
+        System.out.println("--------------Dynamic--------------");
+        for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
             System.out.println(i + ". column name: " + resultSetMetaData.getColumnName(i));
         }
 
 
+        System.out.println("--------------All Employees--------------");
+
         int count = 1;
         while (resultSet.next()) {
-            System.out.println(count+" - " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+            System.out.println(count + " - " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
             count++;
         }
-
 
     }
 }
