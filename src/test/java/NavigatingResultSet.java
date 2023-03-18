@@ -15,27 +15,32 @@ public class NavigatingResultSet {
 
         //ResultSet Methods
         resultSet.first();
-        System.out.println("First row item: "+resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+        System.out.println("First row item: " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
 
         resultSet.last();
-        System.out.println("Last row item: "+resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+        System.out.println("Last row item: " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
 
         resultSet.previous();
-        System.out.println("Before last row item: "+resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+        System.out.println("Before last row item: " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
 
         for (int i = 1; i < 10; i++) {
             resultSet.absolute(i);
-            System.out.println(i+"- "+resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+            System.out.println(i + "- " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
         }
 
         resultSet.beforeFirst();
         resultSet.next();
-        System.out.println(resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+        System.out.println("First row item: " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
 
         resultSet.afterLast();
         resultSet.previous();
-        System.out.println(resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
+        System.out.println("Last row item: " + resultSet.getString("FIRST_NAME") + "  " + resultSet.getString("LAST_NAME") + " : " + resultSet.getString("SALARY"));
 
+        resultSet.beforeFirst();
+        while (resultSet.next()) {
+            System.out.println("Row number is " + resultSet.getRow());
+            System.out.println(resultSet.getString(2)+" | "+resultSet.getString(3));
 
+        }
     }
 }
