@@ -32,7 +32,6 @@ public class NavigatingQueryResult {
 
             System.out.println("--------------All Employees--------------");
 
-            resultSet.beforeFirst();
             while (resultSet.next()){
                 System.out.println("Is there any available row :"+resultSet.next()+" \\ Current row is: "+resultSet.getRow());
                 for (int i = 1; i <=10; i++) {

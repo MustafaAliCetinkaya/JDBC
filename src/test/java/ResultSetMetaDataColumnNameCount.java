@@ -38,5 +38,8 @@ public class ResultSetMetaDataColumnNameCount {
             count++;
         }
 
+        connection.close();
+        resultSet.close();
+        statement.close();
     }
 }

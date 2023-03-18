@@ -13,6 +13,8 @@ public class ConnectionConfiguration {
         try {
             Connection connection= DriverManager.getConnection(url, username, password);
             System.out.println("Connection was successful");
+
+            connection.close();
         } catch (SQLException e) {
             System.out.println("Connection has failed! "+ e.getMessage());
         }
