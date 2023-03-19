@@ -38,7 +38,10 @@ public class DButilPractice {
                 "from employees\n" +
                 "where rownum <2";
 
-        Map<String, Object> rowMap = DBUtils.getRowMap(query);
+        Map<String, Object> rowMap = DBUtils.getRowMap(query)
+                ;
+/*If the query results in multiple rows and/or columns of data,
+only first row will be returned. The rest of the data will be ignored*/
 
         System.out.println(rowMap.toString());
 
