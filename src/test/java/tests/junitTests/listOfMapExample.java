@@ -65,8 +65,10 @@ public class listOfMapExample {
 
                 String currentEmployee = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
                 Object salaryOfCurrentEmployee = resultSet.getString("SALARY");
+                Object jobOfCurrentEmployee = resultSet.getString("JOB_ID");
 
                 currentRow.put(currentEmployee, salaryOfCurrentEmployee);
+                currentRow.put(currentEmployee, jobOfCurrentEmployee);
                 if (!queryData2.contains(currentRow)) {
                     queryData2.add(currentRow);
                 }
@@ -76,6 +78,11 @@ public class listOfMapExample {
         for (Map<String, Object> eachMap : queryData2) {
             System.out.println(eachMap.toString());
         }
+
+        //close connection
+        resultSet.close();
+        statement.close();
+        connection.close();
 
     }
 
@@ -117,7 +124,6 @@ public class listOfMapExample {
         row2.put(rsmd.getColumnName(4), resultSet.getString(4));
 
         System.out.println(row2.toString());
-        //BREAK UNTIL 2:20
 
         //adding rows one by one to my list
         queryData.add(row1);
