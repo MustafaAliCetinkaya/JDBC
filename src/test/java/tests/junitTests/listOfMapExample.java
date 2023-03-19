@@ -63,12 +63,13 @@ public class listOfMapExample {
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
                 Map<String, Object> currentRow = new HashMap<>();
 
-                String currentEmployee = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
+                String currentEmployeeFullName = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
+                String currentEmployeeLastName = resultSet.getString("LAST_NAME");
                 Object salaryOfCurrentEmployee = resultSet.getString("SALARY");
                 Object jobOfCurrentEmployee = resultSet.getString("JOB_ID");
 
-                currentRow.put(currentEmployee, salaryOfCurrentEmployee);
-                currentRow.put(currentEmployee, jobOfCurrentEmployee);
+                currentRow.put(currentEmployeeFullName, salaryOfCurrentEmployee);
+                currentRow.put(currentEmployeeLastName, jobOfCurrentEmployee);
                 if (!queryData2.contains(currentRow)) {
                     queryData2.add(currentRow);
                 }
