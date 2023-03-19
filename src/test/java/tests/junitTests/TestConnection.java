@@ -1,4 +1,4 @@
-package tests;
+package tests.junitTests;
 
 import java.sql.*;
 
