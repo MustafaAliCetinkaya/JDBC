@@ -13,8 +13,8 @@ public class listOfMapExample {
     String dbUsername = "hr";
     String dbPassword = "hr";
 
-    Connection connection = DriverManager.getConnection(dbUrl,dbUsername,dbPassword);
-    Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+    Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+    Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
     ResultSet resultSet = statement.executeQuery("SELECT * FROM employees");
 
     ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
@@ -27,23 +27,23 @@ public class listOfMapExample {
     public void test1() throws SQLException {
 
         //creating list for keeping all the rows maps
-        List<Map<String,Object>> queryData = new ArrayList<>();
+        List<Map<String, Object>> queryData = new ArrayList<>();
 
-        Map<String,Object> row1 = new HashMap<>();
+        Map<String, Object> row1 = new HashMap<>();
 
-        row1.put("first_name","Steven");
-        row1.put("last_name","King");
-        row1.put("salary",24000);
-        row1.put("job_id","AD_PRES");
+        row1.put("first_name", "Steven");
+        row1.put("last_name", "King");
+        row1.put("salary", 24000);
+        row1.put("job_id", "AD_PRES");
 
         System.out.println(row1.toString());
 
-        Map<String,Object> row2 = new HashMap<>();
+        Map<String, Object> row2 = new HashMap<>();
 
-        row2.put("first_name","Neena");
-        row2.put("last_name","Kochhar");
-        row2.put("salary",17000);
-        row2.put("job_id","AD_VP");
+        row2.put("first_name", "Neena");
+        row2.put("last_name", "Kochhar");
+        row2.put("salary", 17000);
+        row2.put("job_id", "AD_VP");
 
         System.out.println(row2.toString());
 
@@ -56,18 +56,18 @@ public class listOfMapExample {
 
         System.out.println("----------------Dynamic-----------------");
 
-        List<Map<String,Object>> queryData2 = new ArrayList<>();
+        List<Map<String, Object>> queryData2 = new ArrayList<>();
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
 
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
-                Map<String,Object> currentRow = new HashMap<>();
+                Map<String, Object> currentRow = new HashMap<>();
 
-                String currentEmployee=resultSet.getString("FIRST_NAME")+" "+resultSet.getString("LAST_NAME");
-                Object salaryOfCurrentEmployee=resultSet.getString("SALARY");
+                String currentEmployee = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
+                Object salaryOfCurrentEmployee = resultSet.getString("SALARY");
 
-                currentRow.put(currentEmployee,salaryOfCurrentEmployee);
-                if( ! queryData2.contains(currentRow) ){
+                currentRow.put(currentEmployee, salaryOfCurrentEmployee);
+                if (!queryData2.contains(currentRow)) {
                     queryData2.add(currentRow);
                 }
             }
@@ -77,15 +77,12 @@ public class listOfMapExample {
             System.out.println(eachMap.toString());
         }
 
-
-
-
     }
 
     @Test
     public void test2() throws SQLException {
 
-        Connection connection = DriverManager.getConnection(dbUrl,dbUsername,dbPassword);
+        Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT first_name,last_name,salary,job_id\n" +
                 "from employees\n" +
@@ -98,26 +95,26 @@ public class listOfMapExample {
         resultSet.next();
 
         //creating list for keeping all the rows maps
-        List<Map<String,Object>> queryData = new ArrayList<>();
+        List<Map<String, Object>> queryData = new ArrayList<>();
 
-        Map<String,Object> row1 = new HashMap<>();
+        Map<String, Object> row1 = new HashMap<>();
 
-        row1.put(rsmd.getColumnName(1),resultSet.getString(1));
-        row1.put(rsmd.getColumnName(2),resultSet.getString(2));
-        row1.put(rsmd.getColumnName(3),resultSet.getString(3));
-        row1.put(rsmd.getColumnName(4),resultSet.getString(4));
+        row1.put(rsmd.getColumnName(1), resultSet.getString(1));
+        row1.put(rsmd.getColumnName(2), resultSet.getString(2));
+        row1.put(rsmd.getColumnName(3), resultSet.getString(3));
+        row1.put(rsmd.getColumnName(4), resultSet.getString(4));
 
         System.out.println(row1.toString());
 
         //move to second row
         resultSet.next();
 
-        Map<String,Object> row2 = new HashMap<>();
+        Map<String, Object> row2 = new HashMap<>();
 
-        row2.put(rsmd.getColumnName(1),resultSet.getString(1));
-        row2.put(rsmd.getColumnName(2),resultSet.getString(2));
-        row2.put(rsmd.getColumnName(3),resultSet.getString(3));
-        row2.put(rsmd.getColumnName(4),resultSet.getString(4));
+        row2.put(rsmd.getColumnName(1), resultSet.getString(1));
+        row2.put(rsmd.getColumnName(2), resultSet.getString(2));
+        row2.put(rsmd.getColumnName(3), resultSet.getString(3));
+        row2.put(rsmd.getColumnName(4), resultSet.getString(4));
 
         System.out.println(row2.toString());
         //BREAK UNTIL 2:20
