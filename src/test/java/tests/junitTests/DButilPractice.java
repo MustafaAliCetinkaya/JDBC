@@ -16,7 +16,7 @@ public class DButilPractice {
         DBUtils.createConnection();
         String query = "SELECT first_name,last_name,salary,job_id\n" +
                 "from employees\n" +
-                "where rownum <6";
+                "where rownum <36";
 
         List<Map<String, Object>> queryData = DBUtils.getQueryResultMap(query);
 
