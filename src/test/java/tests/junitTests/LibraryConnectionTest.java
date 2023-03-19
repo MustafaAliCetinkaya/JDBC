@@ -25,7 +25,7 @@ public class LibraryConnectionTest {
         ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
         for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
-            System.out.println(resultSetMetaData.getColumnName(i));
+            System.out.print(resultSetMetaData.getColumnName(i)+"\t");
         }
 
         while (resultSet.next()){
