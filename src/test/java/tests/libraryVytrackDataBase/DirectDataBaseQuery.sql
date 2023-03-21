@@ -27,12 +27,14 @@ job varchar(20)
 );*/
 
 select * from bitnami_orocrm.orocrm_contact;
+select * from bitnami_orocrm.orocrm_contact_email;
 select id,first_name,last_name,email from bitnami_orocrm.orocrm_contact order by id asc ;
 select id,first_name,last_name from bitnami_orocrm.orocrm_contact where first_name='Cherryl';
-select * from bitnami_orocrm.orocrm_contact_email where email='cherrlyamstrong@yahoo.com';
+select * from bitnami_orocrm.orocrm_contact_email where email='cherrylarmstrong@yahoo.com';
+select * from bitnami_orocrm.orocrm_contact_email where owner_id=82;
 
 select c.first_name, c.last_name, e.email
 from bitnami_orocrm.orocrm_contact c
     inner join bitnami_orocrm.orocrm_contact_email e
         on c.id = e.owner_id
-where e.email='cherrlyamstrong@yahoo.com';
+where e.email='cherrylarmstrong@yahoo.com';
