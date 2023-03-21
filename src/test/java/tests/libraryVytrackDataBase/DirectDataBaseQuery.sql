@@ -26,4 +26,13 @@ age INTEGER ,
 job varchar(20)
 );*/
 
-select author from books where book_category_id=3;
+select * from bitnami_orocrm.orocrm_contact;
+select id,first_name,last_name,email from bitnami_orocrm.orocrm_contact order by id asc ;
+select id,first_name,last_name from bitnami_orocrm.orocrm_contact where first_name='Cherryl';
+select * from bitnami_orocrm.orocrm_contact_email where email='cherrlyamstrong@yahoo.com';
+
+select c.first_name, c.last_name, e.email
+from bitnami_orocrm.orocrm_contact c
+    inner join bitnami_orocrm.orocrm_contact_email e
+        on c.id = e.owner_id
+where e.email='cherrlyamstrong@yahoo.com';
