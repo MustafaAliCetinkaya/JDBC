@@ -21,7 +21,7 @@ public class DBUtils {
     }
 
     public static void createConnection() {
-        String dbUrl = "jdbc:oracle:thin:@54.157.140.148:1521:XE";
+        String dbUrl = "jdbc:oracle:thin:@3.216.30.92:1521:XE";
         String dbUsername = "hr";
         String dbPassword = "hr";
         try {

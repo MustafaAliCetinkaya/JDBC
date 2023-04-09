@@ -1,5 +1,7 @@
 package tests.jdbc;
 
+import utilities.DBUtils;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,7 +9,7 @@ import java.sql.SQLException;
 public class DatabaseMetaData {
     public static void main(String[] args) throws SQLException {
 
-        String url = "jdbc:oracle:thin:@54.157.140.148:1521:XE";
+        String url = "jdbc:oracle:thin:@3.216.30.92:1521:XE";
         String username = "hr";
         String password = "hr";
 
@@ -22,7 +24,7 @@ public class DatabaseMetaData {
         System.out.println("Driver version: "+databaseMetaData.getDriverVersion());
 
 
-        connection.close();
-
+        //close the connection
+        DBUtils.destroy();
     }
 }
