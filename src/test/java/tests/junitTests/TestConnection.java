@@ -5,7 +5,7 @@ import java.sql.*;
 public class TestConnection {
 
     public static void main(String[] args) throws SQLException {
-        String dbUrl = "jdbc:oracle:thin:@54.157.140.148:1521:XE";
+        String dbUrl = "jdbc:oracle:thin:@3.216.30.92:1521:XE";
         String dbUsername = "hr";
         String dbPassword = "hr";
 
