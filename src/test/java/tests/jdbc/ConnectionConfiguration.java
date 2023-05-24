@@ -23,7 +23,5 @@ public class ConnectionConfiguration {
         } catch (SQLException e) {
             System.out.println("Connection has failed! "+ e.getMessage());
         }
-
-
     }
 }
